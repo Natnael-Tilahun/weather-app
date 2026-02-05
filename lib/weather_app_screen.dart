@@ -44,7 +44,7 @@ class WeatherAppScreen extends StatelessWidget {
                           spacing: 10,
                           children: [
                             Text(
-                              '300° F',
+                              '300K',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 32,
@@ -77,11 +77,31 @@ class WeatherAppScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        HourlyForcastItem(),
-                        HourlyForcastItem(),
-                        HourlyForcastItem(),
-                        HourlyForcastItem(),
-                        HourlyForcastItem(),
+                        HourlyForcastItem(
+                          time: '00:00',
+                          icon: Icons.cloud,
+                          tempValue: 301.22,
+                        ),
+                        HourlyForcastItem(
+                          time: '03:00',
+                          icon: Icons.sunny,
+                          tempValue: 300.52,
+                        ),
+                        HourlyForcastItem(
+                          time: '06:00',
+                          icon: Icons.cloud,
+                          tempValue: 302.22,
+                        ),
+                        HourlyForcastItem(
+                          time: '09:00',
+                          icon: Icons.sunny,
+                          tempValue: 300.12,
+                        ),
+                        HourlyForcastItem(
+                          time: '12:00',
+                          icon: Icons.cloud,
+                          tempValue: 304.12,
+                        ),
                       ],
                     ),
                   ),
@@ -111,12 +131,12 @@ class WeatherAppScreen extends StatelessWidget {
                         tempratureValue: 94,
                       ),
                       AdditionalInfoItem(
-                        icon: Icons.wind_power,
+                        icon: Icons.air,
                         tempratureType: 'Wind Speed',
                         tempratureValue: 7.64,
                       ),
                       AdditionalInfoItem(
-                        icon: Icons.window_outlined,
+                        icon: Icons.beach_access,
                         tempratureType: 'Pressure',
                         tempratureValue: 1006,
                       ),

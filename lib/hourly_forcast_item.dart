@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 
 class HourlyForcastItem extends StatelessWidget {
-  const HourlyForcastItem({super.key});
+  const HourlyForcastItem({
+    super.key,
+    required this.time,
+    required this.icon,
+    required this.tempValue,
+  });
+
+  final String time;
+  final IconData icon;
+  final double tempValue;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +24,11 @@ class HourlyForcastItem extends StatelessWidget {
           spacing: 10,
           children: [
             Text(
-              '03:00',
+              time,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            Icon(Icons.cloud, size: 32),
-            Text('301.17'),
+            Icon(icon, size: 32),
+            Text(tempValue.toStringAsFixed(2)),
           ],
         ),
       ),
