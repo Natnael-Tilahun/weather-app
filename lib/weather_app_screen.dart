@@ -148,7 +148,7 @@ class _WeatherAppScreenState extends State<WeatherAppScreen> {
                     SizedBox(
                       height: 140,
                       child: ListView.builder(
-                        itemCount: 24,
+                        itemCount: 9,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           final hourlyForecast = data['list'][index + 1];
@@ -161,7 +161,7 @@ class _WeatherAppScreenState extends State<WeatherAppScreen> {
                           final time = DateTime.parse(hourlyForecast['dt_txt']);
 
                           return HourlyForcastItem(
-                            time: DateFormat.Hm().format(time),
+                            time: DateFormat.j().format(time),
                             icon: hourlySky == 'Clouds' || hourlySky == 'Rain'
                                 ? Icons.cloud
                                 : Icons.sunny,
