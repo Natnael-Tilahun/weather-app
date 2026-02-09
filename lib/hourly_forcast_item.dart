@@ -10,7 +10,7 @@ class HourlyForcastItem extends StatelessWidget {
 
   final String time;
   final IconData icon;
-  final double tempValue;
+  final String tempValue;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,12 @@ class HourlyForcastItem extends StatelessWidget {
           children: [
             Text(
               time,
+              maxLines: 1,
+              overflow: .ellipsis,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             Icon(icon, size: 32),
-            Text(tempValue.toStringAsFixed(2)),
+            Text(tempValue),
           ],
         ),
       ),

@@ -10,7 +10,7 @@ class AdditionalInfoItem extends StatelessWidget {
 
   final IconData icon;
   final String tempratureType;
-  final double tempratureValue;
+  final String tempratureValue;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class AdditionalInfoItem extends StatelessWidget {
         Icon(icon, size: 32),
         Text(tempratureType),
         Text(
-          tempratureValue.toStringAsFixed(2),
+          tempratureValue,
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ],
